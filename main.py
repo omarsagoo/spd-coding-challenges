@@ -2,6 +2,14 @@
 # If the current number is even, you have to divide it by 2, otherwise, you have to subtract 1 from it.
 
 def num_step_counter(num):
+    """Given a number, count the number of steps it will take to reduce the number to 0.
+        if number is even divide by 2, if number is odd subtract 1.
+        Time Analysis:
+            O(k), where k is the number of steps needed to take.
+        args:
+            num - int
+        return:
+            steps - int"""
     steps = 0
     while num != 0:
         if num & 1:
@@ -11,4 +19,29 @@ def num_step_counter(num):
         steps += 1
     return steps
         
-print(num_step_counter(14))
+
+# Given an array of integers arr, write a function that returns true if and only if 
+# the number of occurrences of each value in the array is unique.
+
+def uniqueOccurrences(num_arr):
+    """Given an array of numbers, check if the number of occurances of each number is unique
+        Time Complexity:
+            O(n), where n is the size of the initial array.
+        Space Complexity:
+        O(n), where n is the size of the array.
+        args:
+            num_arr - array
+        return:
+            bool"""
+    num_dict = dict()
+    num_set = set()
+
+    for num in num_arr:
+        num_dict[num] = num_dict.get(num, 0) + 1
+
+    for num in num_dict.values():
+        if num in num_set:
+            return False
+        num_set.add(num)
+
+    return True
