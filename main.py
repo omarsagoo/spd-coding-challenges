@@ -1,6 +1,12 @@
 # Given a non-negative integer num, return the number of steps to reduce it to zero. 
 # If the current number is even, you have to divide it by 2, otherwise, you have to subtract 1 from it.
 
+# Variable Table
+#  Variable  |  Value
+# ____________________
+#  Num        | 5 -> 4 -> 2 -> 1 -> 0
+#  Steps      | 0 -> 1 -> 2 -> 3 -> 4
+
 def num_step_counter(num):
     """Given a number, count the number of steps it will take to reduce the number to 0.
         if number is even divide by 2, if number is odd subtract 1.
@@ -23,6 +29,13 @@ def num_step_counter(num):
 # Given an array of integers arr, write a function that returns true if and only if 
 # the number of occurrences of each value in the array is unique.
 
+# Variable Table
+#   Variable  |  Value
+# ________|___________
+# Num_arr   | [1, 1, 2]
+# num_dict   | {} -> {1:1} -> {1:2} -> {1:2, 2:1}
+# num           | 1 -> 1 -> 2 // 2 -> 1
+# num_set    | {} -> {2} -> {2, 1}
 def uniqueOccurrences(num_arr):
     """Given an array of numbers, check if the number of occurances of each number is unique
         Time Complexity:
